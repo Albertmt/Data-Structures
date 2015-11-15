@@ -1,0 +1,27 @@
+Grading revision r13904 by tamazya2, dated 2015-09-18 19:11:56.000867792 -0500 CDT
+Monad Autograder
+Testing lab_inheritance at 2015-09-21 01:06:20
+
+"If you're not failing every now and again, it's a sign you're not doing anything very innovative." ~ Woody Allen
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_virtual_perim  . . . . . . [10 pts] - passed
+test_virtual_area . . . . . . . [10 pts] - passed
+test_destructor (asan)  . . . . [20 pts] - passed
+test_constructor  . . . . . . . [10 pts] - passed
+test_drawable_destructor (asan) [10 pts] - passed
+test_truck_draw . . . . . . . . [10 pts] - passed
+test_slicing  . . . . . . . . . [20 pts] - passed
+test_flower_destructor (asan) . [10 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

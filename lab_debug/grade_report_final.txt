@@ -1,0 +1,24 @@
+Grading revision r6064 by tamazya2, dated 2015-09-04 18:44:57.000785178 -0500 CDT
+Monad Autograder
+Testing lab_debug at 2015-09-07 00:30:15
+
+"In the absence of our leader, I'm assuming control." ~ Kyle Johnson
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+no_segfaults . . . [20 pts] - passed
+produces_out_png . [10 pts] - passed
+similar_sketch . . [30 pts] - passed
+complete_in_01_png [20 pts] - passed
+complete_in_02_png [20 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

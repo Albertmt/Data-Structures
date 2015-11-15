@@ -1,0 +1,27 @@
+Grading revision r36992 by tamazya2, dated 2015-11-01 02:31:12.000275627 -0600 CST
+Monad Autograder
+Testing lab_avl at 2015-11-02 00:37:23
+
+"It's like comparing a small apple with a medium-sized apple." ~ Jason Cho
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_oneElement  . . . [10 pts] - passed
+test_simpleRotateLeft  [10 pts] - passed
+test_simpleRotateRight [10 pts] - passed
+test_threeLeftRotates  [10 pts] - passed
+test_threeRightRotates [10 pts] - passed
+test_manyRotations . . [20 pts] - passed
+test_manyInserts . . . [20 pts] - passed
+test_valgrind (asan) . [10 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

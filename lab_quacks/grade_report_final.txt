@@ -1,0 +1,33 @@
+Grading revision r20767 by tamazya2, dated 2015-10-02 03:39:38.000773858 -0500 CDT
+Monad Autograder
+Testing lab_quacks at 2015-10-05 00:46:00
+
+"Rejoice!" ~ Kotomine Kirei
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+sumDigits_762  . . . [3 pts]  - passed
+sumDigits_0  . . . . [2 pts]  - passed
+sumDigits_2  . . . . [2 pts]  - passed
+sumDigits_1024 . . . [3 pts]  - passed
+triangle_0 . . . . . [2 pts]  - passed
+triangle_1 . . . . . [2 pts]  - passed
+triangle_5 . . . . . [3 pts]  - passed
+triangle_10  . . . . [3 pts]  - passed
+sum_136  . . . . . . [20 pts] - passed
+sum_floats . . . . . [20 pts] - passed
+scramble_17  . . . . [20 pts] - passed
+scramble_10  . . . . [20 pts] - passed
+verifySame_result  . [10 pts] - passed
+verifySame_no_modify [15 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 125
+

@@ -1,0 +1,100 @@
+Grading revision r9882 by tamazya2, dated 2015-09-13 21:52:38.000060897 -0500 CDT
+Monad Autograder
+Testing lab_memory at 2015-09-14 01:46:55
+
+"There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies." ~ C.A.R. Hoare
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_constructor (asan) [5 pts]  - FAILED: Memory errors detected by ASAN
+test_allocate (asan)  . [5 pts]  - passed
+test_printrooms (asan)  [20 pts] - passed
+test_any_output . . . . [30 pts] - passed
+test_correct_output . . [40 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 95
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+test_constructor (run under asan) [5 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running test_constructor [worth 5 points, output below]
+=================================================================
+==11027==ERROR: AddressSanitizer: attempting double-free on 0x611000009280 in thread T0:
+    #0 0x421b2b in operator delete[](void*) /dev/shm/225/lm35/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:98:3
+    #1 0x67754c in Room::clear() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x67754c)
+    #2 0x677701 in Room::~Room() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x677701)
+    #3 0x64d845 in Allocator::~Allocator() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x64d845)
+    #4 0x639faf in proxy_test::test_constructor(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x639faf)
+    #5 0x4e61d8 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4e61d8)
+    #6 0x4cd5e3 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4cd5e3)
+    #7 0x4bf139 in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4bf139)
+    #8 0x4b99f2 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4b99f2)
+    #9 0x4b3987 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4b3987)
+    #10 0x4b2b27 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4b2b27)
+    #11 0x4af289 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4af289)
+    #12 0x4ad390 in main (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4ad390)
+    #13 0x34ade1ed5c in __libc_start_main (/lib64/libc.so.6+0x34ade1ed5c)
+    #14 0x4a5f1c in _start (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4a5f1c)
+
+0x611000009280 is located 0 bytes inside of 208-byte region [0x611000009280,0x611000009350)
+freed by thread T0 here:
+    #0 0x421b2b in operator delete[](void*) /dev/shm/225/lm35/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:98:3
+    #1 0x67754c in Room::clear() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x67754c)
+    #2 0x677701 in Room::~Room() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x677701)
+    #3 0x64d1df in Allocator::loadRooms(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x64d1df)
+    #4 0x64b75c in Allocator::Allocator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x64b75c)
+    #5 0x639f1d in proxy_test::test_constructor(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x639f1d)
+    #6 0x4e61d8 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4e61d8)
+    #7 0x4cd5e3 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4cd5e3)
+    #8 0x4bf139 in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4bf139)
+    #9 0x4b99f2 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4b99f2)
+    #10 0x4b3987 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4b3987)
+    #11 0x4b2b27 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4b2b27)
+    #12 0x4af289 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4af289)
+    #13 0x4ad390 in main (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4ad390)
+    #14 0x34ade1ed5c in __libc_start_main (/lib64/libc.so.6+0x34ade1ed5c)
+
+previously allocated by thread T0 here:
+    #0 0x4215fb in operator new[](unsigned long) /dev/shm/225/lm35/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:64:37
+    #1 0x676147 in Room::Room(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x676147)
+    #2 0x67f48d in fileio::readRoom(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x67f48d)
+    #3 0x67e910 in fileio::nextRoom() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x67e910)
+    #4 0x64d1b0 in Allocator::loadRooms(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x64d1b0)
+    #5 0x64b75c in Allocator::Allocator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x64b75c)
+    #6 0x639f1d in proxy_test::test_constructor(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x639f1d)
+    #7 0x4e61d8 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4e61d8)
+    #8 0x4cd5e3 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4cd5e3)
+    #9 0x4bf139 in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4bf139)
+    #10 0x4b99f2 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4b99f2)
+    #11 0x4b3987 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4b3987)
+    #12 0x4b2b27 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4b2b27)
+    #13 0x4af289 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4af289)
+    #14 0x4ad390 in main (/dev/shm/cs225student/autograder/monad/monad/lab_memory_grade/proxy-asan+0x4ad390)
+    #15 0x34ade1ed5c in __libc_start_main (/lib64/libc.so.6+0x34ade1ed5c)
+
+SUMMARY: AddressSanitizer: double-free /dev/shm/225/lm35/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:98 operator delete[](void*)
+==11027==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 95
+

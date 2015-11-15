@@ -1,0 +1,23 @@
+Grading revision r24746 by tamazya2, dated 2015-10-10 00:57:19.000055842 -0500 CDT
+Monad Autograder
+Testing lab_trees at 2015-10-12 02:17:52
+
+"I think Microsoft named .NET so it wouldn't show up in a Unix directory listing." ~ Oktal
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_isOrdered  . [33 pts] - passed
+test_mirror . . . [33 pts] - passed
+test_printPaths . [34 pts] - passed
+test_sumDistances [25 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 125
+
